@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "381549919819",
+    "project_id": "aydascakes-c490a",
+    "storage_bucket": "aydascakes-c490a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381549919819:android:2e02286b5828a3d5b557ce",
+        "android_client_info": {
+          "package_name": "com.example.aydascakeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381549919819-e3unpl2umilnkdqmjntkhcrtg924naa3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7D9kch1F0uMay9BPwXKquV2cV6ysnz2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381549919819-e3unpl2umilnkdqmjntkhcrtg924naa3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381549919819:android:fd9da4955fc6e61eb557ce",
+        "android_client_info": {
+          "package_name": "com.example.aydascakes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381549919819-e3unpl2umilnkdqmjntkhcrtg924naa3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7D9kch1F0uMay9BPwXKquV2cV6ysnz2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381549919819-e3unpl2umilnkdqmjntkhcrtg924naa3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
