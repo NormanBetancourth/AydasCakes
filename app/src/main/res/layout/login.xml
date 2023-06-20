@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEDCDB">
+
+    <ImageView
+        android:id="@+id/bordered1"
+        android:layout_width="320dp"
+        android:layout_height="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/rounded_border" />
+
+    <ImageView
+        android:id="@+id/imgAydascake"
+        android:layout_width="300dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered1"
+        app:layout_constraintEnd_toEndOf="@+id/bordered1"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/bordered1"
+        app:layout_constraintTop_toTopOf="@+id/bordered1"
+        app:layout_constraintVertical_bias="0.426"
+        tools:srcCompat="@drawable/aydascake" />
+
+    <ImageView
+        android:id="@+id/bordered2"
+        android:layout_width="381dp"
+        android:layout_height="439dp"
+        android:layout_marginTop="256dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rounded_border" />
+
+    <EditText
+        android:id="@+id/editCorreo"
+        android:layout_width="344dp"
+        android:layout_height="64dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FEDCDB"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered2"
+        app:layout_constraintEnd_toEndOf="@+id/bordered2"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/bordered2"
+        app:layout_constraintTop_toTopOf="@+id/bordered2"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered2"
+        app:layout_constraintEnd_toEndOf="@+id/bordered2"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/bordered2"
+        app:layout_constraintTop_toTopOf="@+id/bordered2"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <TextView
+        android:id="@+id/tvClave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clave"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered2"
+        app:layout_constraintEnd_toEndOf="@+id/bordered2"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="@+id/bordered2"
+        app:layout_constraintTop_toTopOf="@+id/bordered2"
+        app:layout_constraintVertical_bias="0.402" />
+
+    <EditText
+        android:id="@+id/editClave"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FEDCDB"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered2"
+        app:layout_constraintEnd_toEndOf="@+id/bordered2"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/bordered2"
+        app:layout_constraintTop_toTopOf="@+id/bordered2"
+        app:layout_constraintVertical_bias="0.544"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btIngresar"
+        android:layout_width="207dp"
+        android:layout_height="72dp"
+        android:background="@drawable/rounded_corner"
+        android:color="#FD788D"
+        android:text="Ingresar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bordered2"
+        app:layout_constraintEnd_toEndOf="@+id/bordered2"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="@+id/bordered2"
+        app:layout_constraintTop_toTopOf="@+id/bordered2"
+        app:layout_constraintVertical_bias="0.896" />
+
+    <TextView
+        android:id="@+id/tvRegisHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse Aquí"
+        android:textSize="20sp"
+        android:textStyle="italic"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.744" />
+</androidx.constraintlayout.widget.ConstraintLayout>
