@@ -64,20 +64,43 @@
         app:srcCompat="@drawable/shopping_cart"
         tools:ignore="SpeakableTextPresentCheck"/>
 
-    <TextView
-        android:id="@+id/tvFactura"
-        android:layout_width="304dp"
-        android:layout_height="552dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/rounded_corner_white"
-        android:color="#FFFFFF"
-        android:text="Factura"
-        android:textAlignment="center"
-        android:textSize="20sp"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="595dp"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:id="@+id/tvFactura"
+                android:layout_width="309dp"
+                android:layout_height="497dp"
+                android:layout_marginBottom="112dp"
+                android:background="@drawable/rounded_corner_white"
+                android:color="#FFFFFF"
+                android:text="Factura"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+
+
+
+    </FrameLayout>
+
+
+
 
     <Button
         android:id="@+id/btVolvIni"

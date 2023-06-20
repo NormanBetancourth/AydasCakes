@@ -33,7 +33,7 @@
         android:id="@+id/btnPagarP"
         android:layout_width="152dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/rounded_corner"
         android:color="#FD788D"
         android:text="Pagar"
@@ -48,7 +48,7 @@
         android:layout_width="151dp"
         android:layout_height="54dp"
         android:layout_marginStart="244dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/rounded_corner"
         android:color="#FD788D"
         android:text="Cancelar"
@@ -69,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintVertical_bias="0.864" />
 
     <TextView
         android:id="@+id/textView"
