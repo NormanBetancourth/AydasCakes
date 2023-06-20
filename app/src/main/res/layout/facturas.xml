@@ -20,8 +20,8 @@
 
     <ImageButton
         android:id="@+id/ibSearch"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
+        android:layout_width="63dp"
+        android:layout_height="56dp"
         android:layout_marginStart="60dp"
 
         android:background="#FFFFFF"
@@ -32,8 +32,8 @@
 
     <ImageButton
         android:id="@+id/ibMenu"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
+        android:layout_width="58dp"
+        android:layout_height="56dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/ibSearch"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,6 +64,33 @@
         app:srcCompat="@drawable/shopping_cart"
         tools:ignore="SpeakableTextPresentCheck"/>
 
+    <TextView
+        android:id="@+id/tvFactura"
+        android:layout_width="304dp"
+        android:layout_height="552dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/rounded_corner_white"
+        android:color="#FFFFFF"
+        android:text="Factura"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btVolvIni"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/rounded_corner"
+        android:color="#FD788D"
+        android:text="Volver al Inicio"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
