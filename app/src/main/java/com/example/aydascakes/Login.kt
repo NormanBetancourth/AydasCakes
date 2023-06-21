@@ -67,6 +67,7 @@ class Login : AppCompatActivity() {
         tvRegisHere.setOnClickListener {
             val intent = Intent(this, Registro::class.java)
             startActivity(intent)
+            finish()
         }
 
 
