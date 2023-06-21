@@ -7,7 +7,7 @@ import java.util.concurrent.CompletableFuture
 class Producto(val id : String,
                val nombre: String,
                val descripcion: String,
-               val costo: Double,
+               val costo: String,
                val img : String)
 {
     override fun toString(): String {
@@ -25,12 +25,12 @@ class Producto(val id : String,
             CollectionProducto.get()
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        var prd = ArrayList<Producto>()
+                        val prd = ArrayList<Producto>()
                         for (document in task.result) {
                             prd.add(Producto(document.id,
                                 document.get("nombre") as String,
                                 document.get("descripcion") as String,
-                                (document.get("costo") as Long).toDouble(),
+                                (document.get("costo") as Any).toString(),
                                 document.get("img") as String))
                         }
                         completableFuture.complete(prd)
