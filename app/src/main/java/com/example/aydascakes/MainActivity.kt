@@ -40,9 +40,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Guardar usuario en DB
-        Usuario.postUsuario("Juan", "Juan@hotmail", "666", "12345678")
+        //Usuario.postUsuario("Juan", "Juan@hotmail", "666", "12345678")
+        //.thenAccept { valor ->
+            //Log.d(TAG, "Post Usuario: $valor" )
+        //}
+
+        //Actualizar usuario en DB
+        Usuario.putUsuario(Usuario("1YJnzL8oqLFdukaLDs88","TEST", "TEST@hotmail", "666", "12345678"))
         .thenAccept { valor ->
-            Log.d(TAG, "Post Usuario: $valor" )
+            Log.d(TAG, "PUT Usuario: $valor" )
         }
 
         //------------------------------------------------Productos------------------------------------------------
@@ -80,6 +86,9 @@ class MainActivity : AppCompatActivity() {
 //                }
 //            }
         }
+
+
+
 
 
 

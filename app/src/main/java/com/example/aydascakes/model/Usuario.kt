@@ -92,6 +92,31 @@ class Usuario(val id : String,
             return completableFuture
         }
 
+        fun putUsuario(usuario: Usuario): CompletableFuture<Usuario>{
+
+            val completableFuture = CompletableFuture<Usuario>()
+            val user: MutableMap<String, Any> = HashMap()
+            user["clave"] = usuario.clave
+            user["correo"] = usuario.correo
+            user["nombre"] = usuario.nombre
+            user["telefono"] = usuario.telefono
+
+            // Add a new document with a generated ID
+            CollectionUsuario.document(usuario.id)
+                .update(user)
+                .addOnSuccessListener { _ ->
+                    completableFuture.complete(usuario)
+                }
+                .addOnFailureListener {
+                        e -> Log.w(TAG, "Error adding document", e)
+                    completableFuture.complete(null)
+                }
+
+            return completableFuture
+
+
+        }
+
 
     }
 }
