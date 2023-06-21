@@ -6,128 +6,224 @@
     android:layout_height="match_parent"
     android:background="#FEDCDB">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="352dp"
-        android:layout_height="397dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <Button
-        android:id="@+id/btnPagarP"
-        android:layout_width="152dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="104dp"
-        android:background="@drawable/rounded_corner"
-        android:color="#FD788D"
-        android:text="Pagar"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelarP"
-        app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnCancelarP"
-        android:layout_width="151dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginBottom="104dp"
-        android:background="@drawable/rounded_corner"
-        android:color="#FD788D"
-        android:text="Cancelar"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnSeguirComprandoP"
-        android:layout_width="220dp"
-        android:layout_height="57dp"
-        android:background="@drawable/rounded_corner"
-        android:color="#FD788D"
-        android:text="Seguir Comprando"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.864" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="418dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="176dp"
-        android:background="@drawable/rounded_corner_white"
-        android:color="#FFFFFF"
-        android:gravity="center"
-        android:text="Total "
-        android:textSize="24sp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/ibSearch"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="288dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/ibMenu"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/ibSearch"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/menu"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageButton
-        android:id="@+id/ibUser"
-        android:layout_width="59dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="292dp"
-        android:background="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user"
-        tools:ignore="SpeakableTextPresentCheck"/>
 
-    <ImageButton
-        android:id="@+id/ibShopCart"
-        android:layout_width="57dp"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shopping_cart"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+
+                <ImageButton
+                    android:id="@+id/ibMenu"
+                    android:layout_width="59dp"
+                    android:layout_height="58dp"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/menu"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/ibSearch"
+                    android:layout_width="64dp"
+                    android:layout_height="58dp"
+                    android:layout_marginEnd="145dp"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/search"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/ibUser"
+                    android:layout_width="59dp"
+                    android:layout_height="56dp"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/user"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/ibShopCart"
+                    android:layout_width="57dp"
+                    android:layout_height="56dp"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/shopping_cart"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="350dp"
+                android:layout_height="417dp"
+                android:layout_gravity="center|center_vertical"
+                android:background="#FFFFFF"
+                android:textAlignment="center"
+                />
+
+
+            <!-- list_item_product.xml -->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/product_image"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/product_placeholder" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Product Name" />
+
+                    <TextView
+                        android:id="@+id/product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="Product Price" />
+
+                    <Button
+                        android:id="@+id/quantity_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cantidad" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            <Space
+                android:layout_width="32dp"
+                android:layout_height="29dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="418dp"
+                android:layout_height="46dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corner_white"
+                android:color="#FFFFFF"
+                android:gravity="center"
+                android:text="Total "
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="29dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="35dp"
+                    android:layout_height="50dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnPagarP"
+                    android:layout_width="152dp"
+                    android:layout_height="53dp"
+                    android:background="@drawable/rounded_corner"
+                    android:color="#FD788D"
+                    android:text="Pagar"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    />
+
+
+
+                <Button
+                    android:id="@+id/btnCancelarP"
+                    android:layout_width="151dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/rounded_corner"
+                    android:color="#FD788D"
+                    android:text="Cancelar"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    />
+
+            </LinearLayout>
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnSeguirComprandoP"
+                    android:layout_width="220dp"
+                    android:layout_height="57dp"
+                    android:background="@drawable/rounded_corner"
+                    android:color="#FD788D"
+                    android:gravity="center"
+                    android:text="Seguir Comprando"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
