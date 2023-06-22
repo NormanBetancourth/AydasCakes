@@ -7,63 +7,39 @@
     android:background="#FEDCDB">
 
 
+
+
+
+
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="409dp"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/ibSearch"
-        android:layout_width="63dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="60dp"
-
-        android:background="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/ibMenu"
-        android:layout_width="58dp"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/ibSearch"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/menu"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:theme="?attr/actionBarTheme">
 
 
-    <ImageButton
-        android:id="@+id/ibUser"
-        android:layout_width="59dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="56dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user"
-        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/ibShopCart"
-        android:layout_width="57dp"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shopping_cart"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        <ImageButton
+            android:id="@+id/ibUser"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            android:layout_marginStart="290dp"
+            app:srcCompat="@drawable/user"
+            tools:ignore="SpeakableTextPresentCheck" />
 
+        <ImageButton
+            android:id="@+id/ibShopCart"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/shopping_cart"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -72,22 +48,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
+
+
+
+
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="595dp"
+            android:layout_height="528dp"
             android:layout_gravity="center">
+
+
+
 
 
             <TextView
                 android:id="@+id/tvFactura"
                 android:layout_width="309dp"
-                android:layout_height="497dp"
+                android:layout_height="528dp"
                 android:layout_marginBottom="112dp"
                 android:background="@drawable/rounded_corner_white"
                 android:color="#FFFFFF"
                 android:text="Factura"
                 android:textAlignment="center"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
@@ -110,7 +95,9 @@
         android:background="@drawable/rounded_corner"
         android:color="#FD788D"
         android:text="Volver al Inicio"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
