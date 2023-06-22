@@ -74,10 +74,6 @@
                 android:layout_gravity="center|center_vertical"
                 android:background="#FFFFFF"
                 android:textAlignment="center"
-
-
-
-
                 />
 
 
@@ -89,41 +85,35 @@
                 android:padding="16dp">
 
 
-
-                <ImageView
-                    android:id="@+id/product_image"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:src="@drawable/macaron" />
-
                 <LinearLayout
+                    android:id="@+id/botoneraPagar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/product_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Product Name"
                         android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:text="Product Name" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/product_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Product Price"
                         android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:text="Product Price" />
-
+                        android:textStyle="bold" />
 
 
                     <!-- activity_main.xml -->
                     <LinearLayout
+                        android:id="@+id/cantidadbotonera"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -133,25 +123,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Cantidad "
-                            android:textStyle="bold"
-                            android:textSize="22sp" />
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
 
                         <Space
                             android:layout_width="2dp"
                             android:layout_height="2dp" />
 
 
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="#"
-                            android:textSize="22sp" />
-
                         <Space
-                            android:layout_width="30dp"
-                            android:layout_height="20dp" />
+                            android:layout_width="44dp"
+                            android:layout_height="26dp" />
 
 
                         <Button
@@ -197,7 +179,7 @@
                 android:layout_height="29dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/total"
                 android:layout_width="418dp"
                 android:layout_height="46dp"
                 android:textStyle="bold"
@@ -213,7 +195,6 @@
                 android:layout_height="29dp" />
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -221,8 +202,7 @@
 
                 <Space
                     android:layout_width="35dp"
-                    android:layout_height="50dp"
-                    />
+                    android:layout_height="50dp" />
 
                 <Button
                     android:id="@+id/btnPagarP"
@@ -230,16 +210,14 @@
                     android:layout_height="53dp"
                     android:background="@drawable/rounded_corner"
                     android:color="#FD788D"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
                     android:text="Pagar"
-                    android:textSize="22sp" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
                 <Space
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    />
-
+                    android:layout_width="72dp"
+                    android:layout_height="50dp" />
 
 
                 <Button
@@ -248,15 +226,10 @@
                     android:layout_height="54dp"
                     android:background="@drawable/rounded_corner"
                     android:color="#FD788D"
+                    android:text="Regresar"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:text="Cancelar"
-                    android:textSize="22sp" />
-
-                <Space
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    />
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
             <Space
@@ -264,32 +237,6 @@
                 android:layout_height="30dp"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="130dp"
-                    android:layout_height="50dp"
-                    />
-
-                <Button
-                    android:id="@+id/btnSeguirComprandoP"
-                    android:layout_width="220dp"
-                    android:layout_height="57dp"
-                    android:background="@drawable/rounded_corner"
-                    android:color="#FD788D"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:text="Seguir Comprando"
-                    android:textSize="22sp" />
-
-
-
-
-            </LinearLayout>
             <Space
                 android:layout_width="50dp"
                 android:layout_height="20dp"
