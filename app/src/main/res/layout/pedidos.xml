@@ -38,7 +38,7 @@
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="0dp"
-        android:layout_height="157dp"
+        android:layout_height="185dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -59,13 +59,14 @@
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="0dp"
-        android:layout_height="430dp"
+        android:layout_height="370dp"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/background_rounded_pink3" />
+
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="412dp"
@@ -81,13 +82,17 @@
         android:id="@+id/tv_pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Mis Pedidos"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.378"  />
 
     <ImageButton
         android:id="@+id/btn_regresar"
@@ -110,5 +115,15 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_regresar"
         app:layout_constraintStart_toStartOf="@+id/btn_regresar"
         app:layout_constraintTop_toTopOf="@+id/btn_regresar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pedidosLista"
+        android:layout_width="414dp"
+        android:layout_height="289dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        tools:listitem="@layout/pedido_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

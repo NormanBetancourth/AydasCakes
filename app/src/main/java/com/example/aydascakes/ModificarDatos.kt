@@ -37,12 +37,12 @@ class ModificarDatos : AppCompatActivity(){
         Usuario.getUsuarios()
             .thenAccept { listaUsuarios ->
                 if (listaUsuarios.isNotEmpty()) {
-                    val primerUsuario = listaUsuarios[0]
-                    idUsuario = primerUsuario.id
-                    nombre.setText(primerUsuario.nombre)
-                    correo.setText(primerUsuario.correo)
-                    telefono.setText(primerUsuario.telefono)
-                    clave.setText(primerUsuario.clave)
+                    val usuario = listaUsuarios[0]
+                    idUsuario = usuario.id
+                    nombre.setText(usuario.nombre)
+                    correo.setText(usuario.correo)
+                    telefono.setText(usuario.telefono)
+                    clave.setText(usuario.clave)
                 } else {
                     Log.d(ContentValues.TAG, "La lista de usuarios está vacía.")
                 }
