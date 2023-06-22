@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture
 class Pedido(val id : String,
              val usuario: String,
              val fecha: String,
-             val productos: List<String>)
+             val productos: List<ElementoCarrito>)
 {
 
 
@@ -25,7 +25,7 @@ class Pedido(val id : String,
         private val CollectionPedido = db.collection("pedido")
 
 
-        fun postPedido(usuario: String, fecha: Date, productos: List<String>): CompletableFuture<Pedido> {
+        fun postPedido(usuario: String, fecha: Date, productos: List<ElementoCarrito>): CompletableFuture<Pedido> {
             val completableFuture = CompletableFuture<Pedido>()
             val user: MutableMap<String, Any> = HashMap()
             user["usuario"] = usuario
@@ -59,7 +59,7 @@ class Pedido(val id : String,
                             usr.add(Pedido(document.id,
                                 document.get("usuario") as String,
                                 document.get("fecha") as String,
-                                document.get("productos") as List<String>)
+                                document.get("productos") as List<ElementoCarrito>)
                             )
                         }
                         completableFuture.complete(usr)

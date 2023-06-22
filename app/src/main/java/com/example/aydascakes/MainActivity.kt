@@ -7,15 +7,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.aydascakes.model.Pedido
 import com.example.aydascakes.model.Producto
 import com.example.aydascakes.model.Usuario
+import com.example.aydascakes.service.SessionManager
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var sessionManager: SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        sessionManager = SessionManager(this)
 
 
 
@@ -69,10 +73,10 @@ class MainActivity : AppCompatActivity() {
         //------------------------------------------------Pedidos------------------------------------------------
 
 
-        Pedido.postPedido("qni94Oe6WWsJ10URUHKH", Date(), listOf("e0kyvR9ehXR1Kx64rX7Z")).
-        thenAccept { valor ->
-            Log.d(TAG, "Post Pedido: $valor" )
-        }
+//        Pedido.postPedido("qni94Oe6WWsJ10URUHKH", Date(), listOf("e0kyvR9ehXR1Kx64rX7Z")).
+//        thenAccept { valor ->
+//            Log.d(TAG, "Post Pedido: $valor" )
+//        }
 
         val id = "12"
 
@@ -89,6 +93,14 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        val usuarioGuardado = sessionManager.obtenerObjeto("usuario", Usuario::class.java) as? Usuario
+        if (usuarioGuardado != null) {
+            // Hacer algo con el objeto recuperado
+            Log.d("MainActivity", "Nombre: ${usuarioGuardado.nombre}, Correo: ${usuarioGuardado.correo}")
+        }else{
+            Log.d("MainActivity", "Error no se pasa")
+
+        }
 
 
 

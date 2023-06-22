@@ -11,11 +11,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AydasCakes"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".Pagar"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".user"
+            android:exported="false" />
+        <activity
+            android:name=".Factura"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarDatos"
+            android:exported="true" />
+        <activity
+            android:name=".Registro"
+            android:exported="true" />
         <activity
             android:name=".Pedidos"
             android:exported="false"/>
         <activity
-            android:name=".ModificarDatos"
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Pagar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

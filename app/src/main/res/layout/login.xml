@@ -28,6 +28,7 @@
         app:layout_constraintStart_toStartOf="@+id/bordered1"
         app:layout_constraintTop_toTopOf="@+id/bordered1"
         app:layout_constraintVertical_bias="0.426"
+        app:srcCompat="@drawable/aydascake"
         tools:srcCompat="@drawable/aydascake" />
 
     <ImageView
@@ -92,7 +93,7 @@
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FEDCDB"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/bordered2"
         app:layout_constraintEnd_toEndOf="@+id/bordered2"
         app:layout_constraintHorizontal_bias="0.487"
