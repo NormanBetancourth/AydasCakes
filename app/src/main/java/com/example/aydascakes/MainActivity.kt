@@ -73,10 +73,10 @@ class MainActivity : AppCompatActivity() {
         //------------------------------------------------Pedidos------------------------------------------------
 
 
-        Pedido.postPedido("qni94Oe6WWsJ10URUHKH", Date(), listOf("e0kyvR9ehXR1Kx64rX7Z")).
-        thenAccept { valor ->
-            Log.d(TAG, "Post Pedido: $valor" )
-        }
+//        Pedido.postPedido("qni94Oe6WWsJ10URUHKH", Date(), listOf("e0kyvR9ehXR1Kx64rX7Z")).
+//        thenAccept { valor ->
+//            Log.d(TAG, "Post Pedido: $valor" )
+//        }
 
         val id = "12"
 

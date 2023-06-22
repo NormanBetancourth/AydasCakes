@@ -32,28 +32,14 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme">
 
-                <ImageButton
-                    android:id="@+id/ibMenu"
-                    android:layout_width="59dp"
-                    android:layout_height="58dp"
-                    android:background="#FFFFFF"
-                    app:srcCompat="@drawable/menu"
-                    tools:ignore="SpeakableTextPresentCheck" />
 
-                <ImageButton
-                    android:id="@+id/ibSearch"
-                    android:layout_width="64dp"
-                    android:layout_height="58dp"
-                    android:layout_marginEnd="145dp"
-                    android:background="#FFFFFF"
-                    app:srcCompat="@drawable/search"
-                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <ImageButton
                     android:id="@+id/ibUser"
                     android:layout_width="59dp"
                     android:layout_height="56dp"
                     android:background="#FFFFFF"
+                    android:layout_marginStart="290dp"
                     app:srcCompat="@drawable/user"
                     tools:ignore="SpeakableTextPresentCheck" />
 

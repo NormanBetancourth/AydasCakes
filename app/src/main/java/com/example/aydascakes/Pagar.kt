@@ -1,7 +1,10 @@
 package com.example.aydascakes
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.View
@@ -12,9 +15,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aydascakes.model.ElementoCarrito
-import com.example.aydascakes.model.Producto
+import com.example.aydascakes.model.*
 import com.example.aydascakes.service.SessionManager
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class Pagar : AppCompatActivity() {
@@ -44,6 +48,13 @@ class Pagar : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
+        sessionManager.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
+        carrito = (sessionManager.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+
+
+
+
+
         Producto.getProductos().thenAccept{ productos ->
 
             val productosDelCarrito = ArrayList<Producto>()
@@ -66,10 +77,26 @@ class Pagar : AppCompatActivity() {
 
 
 
-            //TODO add funcionalidad
+            //TODO add btnRegresar hacia home
             btnPagar = findViewById(R.id.btnPagarP)
             btnRegresar = findViewById(R.id.btnCancelarP)
 
+            btnPagar.setOnClickListener {
+
+
+
+
+                val intent = Intent(this, Factura::class.java)
+                startActivity(intent)
+                finish()
+
+
+
+
+
+
+
+            }
             actualizarTotal()
         }
 
@@ -131,6 +158,7 @@ class Pagar : AppCompatActivity() {
 
             sessionManager.guardarObjeto("idProductoBotonera", id)
 
+
             linearLayout =  findViewById(R.id.botoneraPagar)
             tvproduct_name = findViewById(R.id.product_name)
             tvproduct_price =  findViewById(R.id.product_price)
@@ -153,7 +181,6 @@ class Pagar : AppCompatActivity() {
 
 
 
-            //TODO: Guardar carrito en el session
 
             btnAdd.setOnClickListener {
                 tvcantidad =  findViewById(R.id.cantidad)
@@ -164,9 +191,11 @@ class Pagar : AppCompatActivity() {
                     if (carr.id == idAction) ElementoCarrito(carr.id, carr.cantidad+1)  else carr
                 }
 
+
                 tvcantidad.text = (((rescarritoAction?.cantidad?.plus(1)) ?: "")).toString()
 
                 actualizarTotal()
+                sessionManager.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
 
 
 
@@ -188,6 +217,7 @@ class Pagar : AppCompatActivity() {
                         tvcantidad.text = (((rescarritoAction?.cantidad?.minus(1)) ?: "")).toString()
 
                         actualizarTotal()
+                        sessionManager.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
                     }
                 }
 
