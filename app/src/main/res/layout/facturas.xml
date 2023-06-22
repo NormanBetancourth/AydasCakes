@@ -72,22 +72,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
+
+
+
+
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="595dp"
+            android:layout_height="528dp"
             android:layout_gravity="center">
+
+
+
 
 
             <TextView
                 android:id="@+id/tvFactura"
                 android:layout_width="309dp"
-                android:layout_height="497dp"
+                android:layout_height="528dp"
                 android:layout_marginBottom="112dp"
                 android:background="@drawable/rounded_corner_white"
                 android:color="#FFFFFF"
                 android:text="Factura"
                 android:textAlignment="center"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
@@ -110,7 +119,9 @@
         android:background="@drawable/rounded_corner"
         android:color="#FD788D"
         android:text="Volver al Inicio"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
