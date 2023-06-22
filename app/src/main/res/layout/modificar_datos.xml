@@ -218,7 +218,7 @@
         app:layout_constraintVertical_bias="0.451"
         app:srcCompat="@drawable/button_rounded" />
     <ImageButton
-        android:id="@+id/btn_regresar"
+        android:id="@+id/btn_Inicio"
         android:layout_width="143dp"
         android:layout_height="70dp"
         android:layout_marginEnd="28dp"
@@ -248,9 +248,9 @@
         android:text="Regresar"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_regresar"
-        app:layout_constraintEnd_toEndOf="@+id/btn_regresar"
-        app:layout_constraintStart_toStartOf="@+id/btn_regresar"
-        app:layout_constraintTop_toTopOf="@+id/btn_regresar" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_Inicio"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Inicio"
+        app:layout_constraintStart_toStartOf="@+id/btn_Inicio"
+        app:layout_constraintTop_toTopOf="@+id/btn_Inicio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
