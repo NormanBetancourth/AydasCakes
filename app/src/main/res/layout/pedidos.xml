@@ -133,6 +133,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Testing"
         app:srcCompat="@drawable/button_rounded" />
 
     <TextView

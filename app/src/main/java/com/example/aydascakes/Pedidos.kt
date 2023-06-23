@@ -1,14 +1,11 @@
 package com.example.aydascakes
 
-import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
@@ -19,16 +16,16 @@ import com.example.aydascakes.model.Pedido
 import com.example.aydascakes.model.Producto
 import com.example.aydascakes.model.Usuario
 import com.example.aydascakes.service.SessionManager
-import org.w3c.dom.Text
-import kotlin.math.cos
-import kotlin.streams.toList
 
 class Pedidos : AppCompatActivity(){
 
     lateinit var pedidosRecyclerView : RecyclerView
-    lateinit var productosArrayList : List<Pedido>
+    lateinit var pedidos : List<Pedido>
+    lateinit var copiaProductos : List<Producto>
     lateinit var btnRegresar : ImageButton
     private lateinit var sessionManager: SessionManager
+    private lateinit var adapter: PedidoAdapter
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +40,10 @@ class Pedidos : AppCompatActivity(){
         pedidosRecyclerView.layoutManager = LinearLayoutManager(this)
 
         pedidosRecyclerView.setHasFixedSize(true)
+        pedidos = ArrayList()
+        adapter = PedidoAdapter(pedidos)
+        pedidosRecyclerView.adapter = adapter
 
-        productosArrayList = listOf<Pedido>()
         getPedidosData()
 
         //Cambia a pantalla de inicio
@@ -54,17 +53,22 @@ class Pedidos : AppCompatActivity(){
         }
     }
     //Obtiene los pedidos del usuario logueado
+
     private fun getPedidosData(){
         val usuario = sessionManager.obtenerObjeto("usuario", Usuario::class.java) as Usuario
 
+        Producto.getProductos().thenAccept { listaProductos -> copiaProductos = listaProductos }
+
         Pedido.getPedidos().thenAccept { listaPedidos ->
-            productosArrayList = listaPedidos.filter { pedido ->
+            pedidos = listaPedidos.filter { pedido ->
                 pedido.usuario == usuario.id
             }
-            pedidosRecyclerView.adapter = PedidoAdapter(productosArrayList)
+            adapter.actualizarLista(pedidos)
         }
+
+
     }
-    private inner class PedidoAdapter(private val productosList : List<Pedido>) : RecyclerView.Adapter<PedidoAdapter.PedidoViewHolder>() {
+    private inner class PedidoAdapter(private var listaPedidos : List<Pedido>) : RecyclerView.Adapter<PedidoAdapter.PedidoViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PedidoViewHolder {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.pedido_item,
@@ -73,12 +77,17 @@ class Pedidos : AppCompatActivity(){
         }
 
         override fun getItemCount(): Int {
-            return productosList.size
+            return listaPedidos.size
         }
 
         override fun onBindViewHolder(holder: PedidoViewHolder, position: Int) {
-            val pedidoActual = productosList[position]
+            val pedidoActual = listaPedidos[position]
             holder.bind(pedidoActual)
+        }
+
+        fun actualizarLista(nuevaLista : List<Pedido>) {
+            this.listaPedidos = nuevaLista
+            this.notifyDataSetChanged()
         }
 
         inner class PedidoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -87,25 +96,28 @@ class Pedidos : AppCompatActivity(){
             val cantidad : TextView = itemView.findViewById(R.id.tvCantidad)
 
             fun bind(pedido : Pedido) {
+                val textoCargando = "Cargando..."
+                costoTotal.text = textoCargando
+                cantidad.text = textoCargando
+                fechaPedido.text = textoCargando
 
-                val idsProductos = pedido.productos.map { prd -> prd.id }
-
-                Producto.getProductos().thenAccept { productosList ->
-                    fechaPedido.text = pedido.fecha
-
-                    val productosFiltrados = productosList.filter {
-                        producto -> idsProductos.contains(producto.id)
+                var costoTotalPedido = 0L
+                var contadorProductos = 0
+                try {
+                    for(elemento in pedido.productos) {
+                        for(prod in copiaProductos) {
+                            if(elemento.id == prod.id) {
+                                costoTotalPedido += prod.costo
+                                contadorProductos++
+                            }
+                        }
                     }
-                    var costoTotalProducto : Long = 0L
-                    var contadorProductos = 0
-
-                    productosFiltrados.forEach { producto ->
-                        costoTotalProducto = costoTotalProducto + producto.costo
-                        contadorProductos++
-                    }
-                    costoTotal.text = costoTotal.toString()
-                    cantidad.text = contadorProductos.toString()
+                } catch (ex : Exception) {
+                    Log.w(Log.DEBUG.toString(), "Error desconocido=$ex", ex)
                 }
+                pedido.fecha.also { fechaPedido.text = it}
+                "₡ $costoTotalPedido".also { costoTotal.text = it }
+                contadorProductos.toString().also { cantidad.text = it }
             }
         }
 
