@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.se.omapi.Session
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -218,10 +216,10 @@ class Home : AppCompatActivity() {
         }
 
         inner class ProductoViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-            private val tvCosto = itemView.findViewById<TextView>(R.id.precioProducto)
-            private val tvNombre = itemView.findViewById<TextView>(R.id.nombreProducto)
+            private val tvCosto = itemView.findViewById<TextView>(R.id.costo)
+            private val tvNombre = itemView.findViewById<TextView>(R.id.nombre)
             private val tvDescripcion = itemView.findViewById<TextView>(R.id.descripcionProducto)
-            private val image = itemView.findViewById<ImageView>(R.id.imagenProducto)
+            private val image = itemView.findViewById<ImageView>(R.id.foto_producto)
 
             @SuppressLint("DiscouragedApi")
             fun bind(producto: Producto, onClickListener: (Producto) -> Unit) {

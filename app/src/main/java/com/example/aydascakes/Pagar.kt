@@ -129,7 +129,7 @@ class Pagar : AppCompatActivity() {
             @SuppressLint("DiscouragedApi")
             fun bind(elemento: Producto) {
                 tvNombre.text = elemento.nombre
-                tvCosto.text = "Costo: ${elemento.costo}"
+                tvCosto.text = "${elemento.costo}"
                 //Nota la img no debe tener extension
 
 
