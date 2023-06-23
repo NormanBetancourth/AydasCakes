@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FEDCDB">
 
-
-
-
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,16 +13,17 @@
         android:background="@color/white"
         android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme">
-
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout">
 
 
         <ImageButton
             android:id="@+id/ibUser"
             android:layout_width="59dp"
             android:layout_height="56dp"
-            android:background="#FFFFFF"
             android:layout_marginStart="290dp"
+            android:background="#FFFFFF"
             app:srcCompat="@drawable/user"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -42,6 +38,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,17 +46,10 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-
-
-
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="528dp"
             android:layout_gravity="center">
-
-
-
 
 
             <TextView
@@ -79,7 +69,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
         </RelativeLayout>
-
 
 
     </FrameLayout>

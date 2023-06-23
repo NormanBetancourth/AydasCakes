@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lineartLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="71dp">
+
+        <ImageView
+            android:id="@+id/aydasLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:background="@color/light_pink"
+            app:srcCompat="@drawable/aydascake" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/filtrosText"
+            android:layout_width="79dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="10dp"
+            android:text="Filtros"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textoBusqueda"
+            android:layout_width="328dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:imeOptions="actionDone"
+            android:hint="Nombre Producto"
+            android:inputType="textShortMessage|textNoSuggestions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filtrosText" />
+
+        <Button
+            android:id="@+id/botonBusqueda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_pink"
+            android:text="Buscar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minValue"
+            app:layout_constraintVertical_bias="0.588" />
+
+        <EditText
+            android:id="@+id/minValue"
+            android:layout_width="157dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:imeOptions="actionDone"
+            android:hint="Mín. ₡"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/maxValue"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoBusqueda" />
+
+        <EditText
+            android:id="@+id/maxValue"
+            android:layout_width="152dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:imeOptions="actionDone"
+            android:ems="10"
+            android:hint="Máx. ₡"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoBusqueda"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productosRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_pink"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        tools:listitem="@layout/layout_producto" />
+</LinearLayout>

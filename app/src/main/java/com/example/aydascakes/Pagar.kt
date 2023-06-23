@@ -52,9 +52,6 @@ class Pagar : AppCompatActivity() {
         carrito = (sessionManager.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
 
 
-
-
-
         Producto.getProductos().thenAccept{ productos ->
 
             val productosDelCarrito = ArrayList<Producto>()
@@ -171,7 +168,7 @@ class Pagar : AppCompatActivity() {
 
             //setear textos
             tvproduct_name.text = res?.nombre ?: ""
-            tvproduct_price.text = res?.costo ?: ""
+            tvproduct_price.text = (res?.costo ?: "").toString()
             tvcantidad.text = (rescarrito?.cantidad ?: "").toString()
 
 
