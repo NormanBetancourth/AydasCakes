@@ -1,8 +1,10 @@
 package com.example.aydascakes
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.se.omapi.Session
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +13,14 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aydascakes.model.ElementoCarrito
+import com.example.aydascakes.model.ElementoCarritoWrapper
 import com.example.aydascakes.model.Producto
+import com.example.aydascakes.service.SessionManager
 import com.example.aydascakes.utilities.CustomItemDecorator
 import java.util.stream.Stream
 import kotlin.streams.toList
@@ -33,13 +39,29 @@ class Home : AppCompatActivity() {
 
     private lateinit var listaProductos : List<Producto>
 
+    private lateinit var session : SessionManager
+
+    private lateinit var carrito : List<ElementoCarrito>
+
+    private var carritoInicializado = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        supportActionBar?.hide()
         editPrecioMax = findViewById(R.id.maxValue)
         editPrecioMin = findViewById(R.id.minValue)
         editTextoBusqueda = findViewById(R.id.textoBusqueda)
+
+        session = SessionManager(this)
+        if(carritoInicializado)
+            carrito = (session.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+        else {
+            carrito = ArrayList()
+            carritoInicializado = true
+            session.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
+        }
+
         inicializarRecycler()
 
         editTextoBusqueda.addTextChangedListener {filtro ->
@@ -90,7 +112,9 @@ class Home : AppCompatActivity() {
         }
     }
     private fun onItemSelected(producto : Producto) {
-        Toast.makeText(this, "Funciona!!, el producto=$producto", Toast.LENGTH_LONG).show()
+        session.guardarObjeto("productoSeleccionado", producto)
+        intent = Intent(this, DetalleProducto::class.java)
+        startActivity(intent)
     }
 
 

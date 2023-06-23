@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:outlineAmbientShadowColor="@color/black"
+    tools:context=".DetalleProducto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="391dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/dark_peach"
+        android:outlineSpotShadowColor="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="740dp"
+            android:backgroundTint="@color/dark_pink"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnRegresar"
+                    android:layout_width="199dp"
+                    android:layout_height="53dp"
+                    android:layout_marginEnd="96dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Regresar"
+                    android:textAllCaps="false"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="665dp"
+                android:backgroundTint="@color/light_pink"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btnAgregarCarrito"
+                        android:layout_width="207dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/round_button"
+                        android:text="Agregar al Carrito"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.971" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="570dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:elevation="4dp"
+                            android:minHeight="?attr/actionBarSize"
+                            android:theme="?attr/actionBarTheme"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <ImageButton
+                                android:id="@+id/userButton"
+                                android:layout_width="59dp"
+                                android:layout_height="56dp"
+                                android:layout_marginStart="275dp"
+                                android:background="#FFFFFF"
+                                app:srcCompat="@drawable/user"
+                                tools:ignore="SpeakableTextPresentCheck" />
+
+                            <ImageButton
+                                android:id="@+id/userCart"
+                                android:layout_width="57dp"
+                                android:layout_height="56dp"
+                                android:layout_marginEnd="40dp"
+                                android:background="#FFFFFF"
+                                app:srcCompat="@drawable/shopping_cart"
+                                tools:ignore="SpeakableTextPresentCheck" />
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginStart="95dp"
+                            android:layout_marginTop="100dp"
+                            app:cardCornerRadius="30dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imagenDetalleProducto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/macaron" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tvDescripcion"
+                            android:layout_width="330dp"
+                            android:layout_height="99dp"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="96dp"
+                            android:text="Lorem Ipsum Dolor"
+                            android:textSize="19dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="24dp"
+                            android:text="Cantidad"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+                        <TextView
+                            android:id="@+id/tvCantidadProducto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="68dp"
+                            android:layout_marginTop="20dp"
+                            android:text="1"
+                            android:textSize="25sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintStart_toEndOf="@+id/textView2"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+                        <Button
+                            android:id="@+id/btnMenos"
+                            android:layout_width="71dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="@color/dark_pink"
+                            android:text="-"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/tvCantidadProducto"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+                        <Button
+                            android:id="@+id/btnMas"
+                            android:layout_width="71dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="@color/dark_pink"
+                            android:text="+"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/btnMenos"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+                        <TextView
+                            android:id="@+id/tvPrecioDetalle"
+                            android:layout_width="108dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="56dp"
+                            android:layout_marginTop="12dp"
+                            android:text="10000"
+                            android:textColor="@color/dark_pink"
+                            android:textSize="30sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                        <TextView
+                            android:id="@+id/tvSimboloColones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="12dp"
+                            android:text="₡"
+                            android:textColor="@color/dark_pink"
+                            android:textSize="30sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+                        <TextView
+                            android:id="@+id/tvNombreProducto"
+                            android:layout_width="330dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Nombre Producto"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPrecioDetalle" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
