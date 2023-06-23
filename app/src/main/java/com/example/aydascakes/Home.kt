@@ -5,11 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.se.omapi.Session
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -33,6 +35,8 @@ class Home : AppCompatActivity() {
 
     private lateinit var editPrecioMin : EditText
 
+    private lateinit var userCart : ImageButton
+
     private lateinit var editTextoBusqueda : EditText
 
     private lateinit var adapter : ProductosAdapter
@@ -45,22 +49,42 @@ class Home : AppCompatActivity() {
 
     private var carritoInicializado = false
 
+
+    //TODO ADD ventana Beverly
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        session = SessionManager(this)
         supportActionBar?.hide()
         editPrecioMax = findViewById(R.id.maxValue)
         editPrecioMin = findViewById(R.id.minValue)
         editTextoBusqueda = findViewById(R.id.textoBusqueda)
 
-        session = SessionManager(this)
-        if(carritoInicializado)
+
+
+
+
+        try {
             carrito = (session.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
-        else {
+            Log.d("carritoinit", carrito.toString())
+        }catch (e: Exception){
             carrito = ArrayList()
-            carritoInicializado = true
             session.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
         }
+
+
+
+
+
+//        session = SessionManager(this)
+//        if(carritoInicializado)
+//            carrito = (session.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+//        else {
+//            carrito = ArrayList()
+//            carritoInicializado = true
+//            session.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
+//        }
 
         inicializarRecycler()
 
@@ -88,6 +112,27 @@ class Home : AppCompatActivity() {
             if(texto.toString() != "") {
                 filtrarProductos()
             }
+        }
+
+        userCart = findViewById(R.id.userCart)
+        userCart.setOnClickListener{
+
+
+            try {
+                val c = (session.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+
+                if(c.isNotEmpty()){
+                    intent = Intent(this, Pagar::class.java)
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "Su carrito esta vacio, añada productos", Toast.LENGTH_LONG).show()
+                }
+            }catch (e: Exception){
+                Toast.makeText(this, "Su carrito esta vacio, añada productos", Toast.LENGTH_LONG).show()
+            }
+
+
+
         }
     }
 

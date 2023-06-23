@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NavUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aydascakes.model.*
@@ -35,9 +36,7 @@ class Pagar : AppCompatActivity() {
     private lateinit var btnRemove: Button
     private lateinit var adapter: ElementosAdapter
     private lateinit var sessionManager: SessionManager
-    private var carrito: List<ElementoCarrito> = listOf(
-        ElementoCarrito("1MpR9cB82EsHnj76HGmQ", 2), ElementoCarrito( "wLqvApHQ9DHUPyvOpZuC", 1)
-    )
+    private lateinit var carrito: List<ElementoCarrito>
 
 
 
@@ -48,8 +47,13 @@ class Pagar : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
-        sessionManager.guardarObjeto("carrito", ElementoCarritoWrapper(carrito))
+
         carrito = (sessionManager.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+
+        carrito.forEach {e ->
+            Log.d("Carrito", "GET Pedido: $e" )
+        }
+
 
 
         Producto.getProductos().thenAccept{ productos ->
@@ -74,25 +78,19 @@ class Pagar : AppCompatActivity() {
 
 
 
-            //TODO add btnRegresar hacia home
+
             btnPagar = findViewById(R.id.btnPagarP)
             btnRegresar = findViewById(R.id.btnCancelarP)
 
             btnPagar.setOnClickListener {
-
-
-
-
                 val intent = Intent(this, Factura::class.java)
                 startActivity(intent)
                 finish()
+            }
 
-
-
-
-
-
-
+            btnRegresar.setOnClickListener {
+                NavUtils.navigateUpFromSameTask(this)
+                finishActivity(0)
             }
             actualizarTotal()
         }
@@ -133,7 +131,7 @@ class Pagar : AppCompatActivity() {
                 tvNombre.text = elemento.nombre
                 tvCosto.text = "Costo: ${elemento.costo}"
                 //Nota la img no debe tener extension
-                //TODO: ajustar imagen con nombre de producto
+
 
                 tvNombre.setTag(elemento.id)
 
@@ -142,7 +140,13 @@ class Pagar : AppCompatActivity() {
                 }
 
 
-                val resourceId = resources.getIdentifier("cake", "drawable", packageName)
+                var resourceId: Int
+                try {
+                    resourceId = resources.getIdentifier(elemento.img, "drawable", packageName)
+                }catch (e: java.lang.Exception){
+                    resourceId = resources.getIdentifier("cake", "drawable", packageName)
+                }
+
                 imageView.setImageResource(resourceId)
             }
         }

@@ -17,23 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/frameLayout">
 
+        <ImageView
+            android:id="@+id/aydasLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:background="@color/light_pink"
+            app:srcCompat="@drawable/aydascake" />
 
-        <ImageButton
-            android:id="@+id/ibUser"
-            android:layout_width="59dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="290dp"
-            android:background="#FFFFFF"
-            app:srcCompat="@drawable/user"
-            tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/ibShopCart"
-            android:layout_width="57dp"
-            android:layout_height="56dp"
-            android:background="#FFFFFF"
-            app:srcCompat="@drawable/shopping_cart"
-            tools:ignore="SpeakableTextPresentCheck" />
+
+
 
     </androidx.appcompat.widget.Toolbar>
 

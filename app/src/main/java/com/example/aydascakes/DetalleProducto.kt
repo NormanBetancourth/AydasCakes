@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -84,7 +85,7 @@ class DetalleProducto : AppCompatActivity() {
             nuevaLista.add(ElementoCarrito(productoSeleccionado.id, cantidadElementos))
 
             //Se reeplaza la lista anterior
-            session.guardarObjeto("carrito", nuevaLista)
+            session.guardarObjeto("carrito", ElementoCarritoWrapper(nuevaLista))
             NavUtils.navigateUpFromSameTask(this)
             finishActivity(0)
         }

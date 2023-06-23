@@ -17,12 +17,14 @@
             android:exported="false" />
          <activity
          android:name=".Pagar"
+         android:parentActivityName=".Home"
          android:exported="false" />
         <activity
             android:name=".user"
             android:exported="false" />
         <activity
             android:name=".Factura"
+            android:parentActivityName=".Home"
             android:exported="false" />
         <activity
             android:name=".ModificarDatos"

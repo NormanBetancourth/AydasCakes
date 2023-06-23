@@ -1,9 +1,13 @@
 package com.example.aydascakes
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.app.NavUtils
 import com.example.aydascakes.model.*
 import com.example.aydascakes.service.SessionManager
 import java.util.*
@@ -12,6 +16,8 @@ class Factura : AppCompatActivity() {
     private lateinit var carrito: List<ElementoCarrito>
     private lateinit var sessionManager: SessionManager
     private lateinit var tvFactura: TextView
+    private lateinit var btVolvIni: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +28,12 @@ class Factura : AppCompatActivity() {
         tvFactura = findViewById(R.id.tvFactura)
 
         carrito = (sessionManager.obtenerObjeto("carrito", ElementoCarritoWrapper::class.java) as ElementoCarritoWrapper).carrito
+
+
+
         sessionManager.eliminarObjeto("carrito")
 
 
-        //TODO add btnRegresar hacia home y botonera superior
 
         val usuario = sessionManager.obtenerObjeto("usuario", Usuario::class.java) as Usuario
         Pedido.postPedido(usuario.id, Date(), carrito).
@@ -55,6 +63,14 @@ class Factura : AppCompatActivity() {
                 }
 
         }
+
+
+        btVolvIni = findViewById(R.id.btVolvIni)
+        btVolvIni.setOnClickListener {
+            NavUtils.navigateUpFromSameTask(this)
+            finishActivity(0)
+        }
+
 
 
     }
