@@ -35,6 +35,8 @@ class Home : AppCompatActivity() {
 
     private lateinit var userCart : ImageButton
 
+    private lateinit var userProfile : ImageButton
+
     private lateinit var editTextoBusqueda : EditText
 
     private lateinit var adapter : ProductosAdapter
@@ -45,7 +47,7 @@ class Home : AppCompatActivity() {
 
     private lateinit var carrito : List<ElementoCarrito>
 
-    private var carritoInicializado = false
+//    private var carritoInicializado = false
 
 
     //TODO ADD ventana Beverly @Carlos
@@ -132,6 +134,13 @@ class Home : AppCompatActivity() {
 
 
         }
+
+        userProfile = findViewById(R.id.userButton)
+        userProfile.setOnClickListener {
+            intent = Intent(this, ModificarDatos::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun filtrarProductos() {

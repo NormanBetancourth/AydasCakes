@@ -44,6 +44,7 @@ class Pagar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pagar)
+        supportActionBar?.hide()
 
         sessionManager = SessionManager(this)
 

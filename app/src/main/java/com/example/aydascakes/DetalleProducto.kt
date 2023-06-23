@@ -35,7 +35,7 @@ class DetalleProducto : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId", "DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate( savedInstanceState)
         setContentView(R.layout.activity_detalle_producto)
         supportActionBar?.hide()
 

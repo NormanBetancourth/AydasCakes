@@ -21,6 +21,7 @@ class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
+        supportActionBar?.hide()
 
 
         correo = findViewById(R.id.etCorreo)

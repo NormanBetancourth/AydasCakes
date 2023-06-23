@@ -4,10 +4,12 @@ import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NavUtils
 import com.example.aydascakes.model.Usuario
 import com.example.aydascakes.service.SessionManager
 
@@ -19,12 +21,15 @@ class ModificarDatos : AppCompatActivity(){
     lateinit var clave: EditText
     lateinit var btnModificar : ImageButton
     lateinit var btnRegresar : ImageButton
+    lateinit var btnVerPedidos : Button
     lateinit var idUsuario : String
     private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.modificar_datos)
+        supportActionBar?.hide()
+
         sessionManager = SessionManager(this)
 
         nombre = findViewById(R.id.input_nom)
@@ -33,6 +38,7 @@ class ModificarDatos : AppCompatActivity(){
         clave = findViewById(R.id.input_clave)
         btnModificar = findViewById(R.id.btn_modificar)
         btnRegresar = findViewById(R.id.btn_Inicio)
+        btnVerPedidos = findViewById(R.id.btnVerPedidos)
 
 
         //Muestra la info del usuario logueado
@@ -66,10 +72,14 @@ class ModificarDatos : AppCompatActivity(){
 
         //Cambia a pantalla de inicio
         btnRegresar.setOnClickListener {
-            val intent: Intent = Intent(this,Pedidos::class.java)
-            startActivity(intent)
+            NavUtils.navigateUpFromSameTask(this)
+            finishActivity(0)
         }
 
+        btnVerPedidos.setOnClickListener {
+            intent = Intent(this, Pedidos::class.java)
+            startActivity(intent)
+        }
 
     }
 
