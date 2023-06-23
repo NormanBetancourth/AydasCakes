@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
 
                             //TODO cambiar a home
                             sessionManager.guardarObjeto("usuario", usuario)
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, Home::class.java)
                             startActivity(intent)
                             finish()
 
