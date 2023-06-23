@@ -30,11 +30,14 @@
             android:parentActivityName=".Home"
             android:exported="false" />
         <activity
-            android:name=".ModificarDatos"
+            android:name=".Pagar"
             android:exported="true" />
         <activity
             android:name=".Registro"
             android:exported="true" />
+        <activity
+            android:name=".Pedidos"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
@@ -44,7 +47,7 @@
 <!--            android:exported="false"/>-->
 
         <activity
-            android:name=".Home"
+            android:name=".ModificarDatos"
             android:exported="true">
 
             <intent-filter>
