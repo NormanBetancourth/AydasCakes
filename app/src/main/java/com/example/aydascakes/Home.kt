@@ -48,7 +48,7 @@ class Home : AppCompatActivity() {
     private var carritoInicializado = false
 
 
-    //TODO ADD ventana Beverly
+    //TODO ADD ventana Beverly @Carlos
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)

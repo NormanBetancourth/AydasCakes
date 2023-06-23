@@ -46,7 +46,6 @@ class Login : AppCompatActivity() {
                         if (usuario != null) {
                             Toast.makeText(this, "Inicio de sesión Exitoso", Toast.LENGTH_SHORT).show()
 
-                            //TODO cambiar a home
                             sessionManager.guardarObjeto("usuario", usuario)
                             val intent = Intent(this, Home::class.java)
                             startActivity(intent)
