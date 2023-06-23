@@ -5,16 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/ibUser"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="290dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/user"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/ibShopCart"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/shopping_cart"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="412dp"
         android:layout_height="104dp"
         android:background="#FEDCDB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:srcCompat="#FEDCDB" />
+
     <ImageView
         android:id="@+id/fondo_logo"
         android:layout_width="157dp"

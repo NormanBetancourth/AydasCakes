@@ -21,7 +21,7 @@
             android:name=".Factura"
             android:exported="false" />
         <activity
-            android:name=".ModificarDatos"
+            android:name=".Pagar"
             android:exported="true" />
         <activity
             android:name=".Registro"
@@ -33,7 +33,7 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Pagar"
+            android:name=".ModificarDatos"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

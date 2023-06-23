@@ -8,8 +8,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.aydascakes.model.Pedido
 import com.example.aydascakes.model.Usuario
+import com.example.aydascakes.service.SessionManager
 
 class ModificarDatos : AppCompatActivity(){
 
@@ -20,10 +20,12 @@ class ModificarDatos : AppCompatActivity(){
     lateinit var btnModificar : ImageButton
     lateinit var btnRegresar : ImageButton
     lateinit var idUsuario : String
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.modificar_datos)
+        sessionManager = SessionManager(this)
 
         nombre = findViewById(R.id.input_nom)
         correo = findViewById(R.id.input_correo)
@@ -34,17 +36,17 @@ class ModificarDatos : AppCompatActivity(){
 
 
         //Muestra la info del usuario logueado
+        val user = sessionManager.obtenerObjeto("usuario", Usuario::class.java) as Usuario
         Usuario.getUsuarios()
-            .thenAccept { listaUsuarios ->
-                if (listaUsuarios.isNotEmpty()) {
-                    val usuario = listaUsuarios[0]
-                    idUsuario = usuario.id
-                    nombre.setText(usuario.nombre)
-                    correo.setText(usuario.correo)
-                    telefono.setText(usuario.telefono)
-                    clave.setText(usuario.clave)
-                } else {
-                    Log.d(ContentValues.TAG, "La lista de usuarios está vacía.")
+            .thenAccept { valor ->
+                valor.forEach { usuario ->
+                    if (usuario.id == user.id){
+                        nombre.setText(usuario.nombre)
+                        correo.setText(usuario.correo)
+                        telefono.setText(usuario.telefono)
+                        clave.setText(usuario.clave)
+                        Log.d(ContentValues.TAG, "Get Usuario: $usuario" )
+                    }
                 }
             }
 
@@ -55,9 +57,7 @@ class ModificarDatos : AppCompatActivity(){
             val telefonoUsuario = telefono.text.toString()
             val claveUsuario = clave.text.toString()
 
-            val usuario = Usuario(idUsuario,nombreUsuario, correoUsuario, claveUsuario, telefonoUsuario)
-
-            Usuario.putUsuario(usuario)
+            Usuario.putUsuario(Usuario(user.id,nombreUsuario, correoUsuario, claveUsuario, telefonoUsuario))
                 .thenAccept { valor ->
                     Log.d(ContentValues.TAG, "PUT Usuario: $valor" )
                 }

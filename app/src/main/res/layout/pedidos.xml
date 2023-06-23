@@ -4,6 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/ibUser"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="290dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/user"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/ibShopCart"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/shopping_cart"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -13,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:srcCompat="#FEDCDB" />
     <ImageView
         android:id="@+id/fondo_logo"
@@ -116,14 +147,24 @@
         app:layout_constraintStart_toStartOf="@+id/btn_regresar"
         app:layout_constraintTop_toTopOf="@+id/btn_regresar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pedidosLista"
-        android:layout_width="414dp"
-        android:layout_height="289dp"
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="292dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        tools:listitem="@layout/pedido_item" />
+        app:layout_constraintTop_toTopOf="@+id/imageView8">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pedidosLista"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            tools:listitem="@layout/pedido_item"/>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
