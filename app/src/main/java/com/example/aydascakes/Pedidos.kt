@@ -109,7 +109,7 @@ class Pedidos : AppCompatActivity(){
             holder.nomProducto.text = currentites.nombre
             holder.costo.text = "₡ ${currentites.costo}"
             //holder.cantidad.text = cantidad
-            val resourceId = resources.getIdentifier("cake", "drawable", packageName)
+            val resourceId = resources.getIdentifier(currentites.img, "drawable", packageName)
             holder.imageView.setImageResource(resourceId)
         }
 

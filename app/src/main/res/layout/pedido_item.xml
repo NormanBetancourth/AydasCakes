@@ -45,7 +45,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="12dp"
                 android:background="#FE6694"
-                tools:srcCompat="@drawable/cookies"/>
+                tools:srcCompat="@drawable/galletas_chocolate"/>
 
             <TextView
                 android:layout_width="wrap_content"

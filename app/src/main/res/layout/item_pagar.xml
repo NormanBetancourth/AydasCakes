@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/costo"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
-        tools:srcCompat="@drawable/cookies" />
+        tools:srcCompat="@drawable/galletas_chocolate" />
 
     <TextView
         android:id="@+id/costo"
